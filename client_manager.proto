@@ -2,5 +2,20 @@ syntax = "proto3";
 package comms;
 
 service ClientManager {
-    
+    rpc DownloadData(DownloadDataRequest) returns (DownloadDataResponse) {}
+}
+
+enum Status {
+    FAILURE = 0;
+    SUCCESS = 1;
+}
+
+message DownloadDataRequest {
+    string client_id = 1;
+    string device_id = 2; // ID of the IoT device whose data the client wants to download - can be device's public key
+}
+
+message DownloadDataResponse {
+    string ipfs_hash = 1; // IPFS hash of the data
+    string encryption_key = 2; // Encryption key used to encrypt the data
 }

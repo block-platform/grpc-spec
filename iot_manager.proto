@@ -27,5 +27,5 @@ message CheckAccessPolicyRequest {
 }
 
 message CheckAccessPolicyResponse {
-    bool access_granted = 1;    // true if the requester has access to read the device's data
+    bool access_granted = 1; // true if the requester has access to read the device's data
 }
